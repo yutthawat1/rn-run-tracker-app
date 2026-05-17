@@ -37,7 +37,7 @@ export default function RunScreen() { // แนะนำให้เปลี่
         <Image source={{ uri: item.image_url }} style={{ width: 100, height: 100, marginBottom: 10, borderRadius: 5, marginRight: 10}} />
         <View>
           <Text style={styles.itemText}>📍 สถานที่: {item.location}</Text>
-          <Text style={styles.itemText}>🏃 ระยะทาง: {item.distance}</Text>
+          <Text style={styles.itemText}>🏃 ระยะทาง: {item.distance} กม.</Text>
           <Text style={styles.itemText}>⏰ ช่วงเวลา: {item.time_of_day}</Text>
           <Text style={styles.itemText}>📅 วันที่: {item.run_date}</Text>
         </View>
