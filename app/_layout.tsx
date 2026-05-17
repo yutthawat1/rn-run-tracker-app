@@ -45,7 +45,8 @@ export default function RootLayout() {
       }}
     >
       <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="run" options={{ title: "Run Tracker V.1.0.0" }} />
+      {/* <Stack.Screen name="run" options={{ title: "Run Tracker V.1.0.0" }} /> */}
+      <Stack.Screen name="run" options={{ title: "Run Tracker" }} />
       <Stack.Screen name="add" options={{ title: "เพิ่มรายการวิ่ง" }} />
       <Stack.Screen name="[id]" options={{ title: "รายละเอียดการวิ่ง" }} />
     </Stack>
