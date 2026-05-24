@@ -16,7 +16,7 @@ export default function RunScreen() { // แนะนำให้เปลี่
           .from("runs")
           .select("*")
           .order("created_at", { ascending: false }); // เรียงจากวันที่ใหม่ไปเก่า
-          
+
         if (error) {
           Alert.alert("คำเตือน", "เกิดข้อผิดพลาดในการดึง กรุณาลองใหม่อีกครั้ง");
           return;
@@ -26,22 +26,26 @@ export default function RunScreen() { // แนะนำให้เปลี่
 
       fetchData();
 
-      return () => {}; 
+      return () => { };
     }, [])
   );
 
-// ฟังก์ชันสำหรับ Render ข้อมูลแต่ละรายการ
-  const renderItem = ({ item }: { item: Run }) => {
+  // ฟังก์ชันสำหรับ Render ข้อมูลแต่ละรายการ
+  const renderItem = ({ item }: { item: any }) => {
     return (
-      <View style={styles.itemContainer}>
-        <Image source={{ uri: item.image_url }} style={{ width: 100, height: 100, marginBottom: 10, borderRadius: 5, marginRight: 10}} />
+      <TouchableOpacity
+        style={styles.itemContainer}
+        onPress={() => router.push({ pathname: "/id", params: { id: item.id } })}
+        activeOpacity={0.7}
+      >
+        <Image source={{ uri: item.image_url }} style={{ width: 100, height: 100, marginBottom: 10, borderRadius: 5, marginRight: 10 }} />
         <View>
           <Text style={styles.itemText}>📍 สถานที่: {item.location}</Text>
           <Text style={styles.itemText}>🏃 ระยะทาง: {item.distance} กม.</Text>
           <Text style={styles.itemText}>⏰ ช่วงเวลา: {item.time_of_day}</Text>
           <Text style={styles.itemText}>📅 วันที่: {item.run_date}</Text>
         </View>
-        </View>
+      </TouchableOpacity>
     );
   };
 
@@ -56,7 +60,7 @@ export default function RunScreen() { // แนะนำให้เปลี่
       <FlatList
         data={runs} // นำข้อมูลจาก state มาใส่
         renderItem={renderItem} // เรียกใช้ฟังก์ชันด้านบนเพื่อวาด UI
-        keyExtractor={(item, index) => index.toString()} 
+        keyExtractor={(item, index) => index.toString()}
         contentContainerStyle={{ paddingBottom: 100 }} // เผื่อระยะห่างด้านล่างไม่ให้ปุ่ม Add บังข้อมูล
       />
 
