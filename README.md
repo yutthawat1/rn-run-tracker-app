@@ -1,6 +1,8 @@
 <h1>Run tracker</h1>
 <h2>24/5/2569</h2>
 <h4>ยุทธวัฒน์ ทองไว</h4>
+<p>load screen</p>
+<img width="191" height="416" alt="image" src="https://github.com/user-attachments/assets/ee4628af-6675-4b04-a10f-2dcbe9b522bc" />
 
 <p>run page</p>
 <img width="191" height="418" alt="image" src="https://github.com/user-attachments/assets/56a0180f-e185-47d0-90bd-9e8cef0e5dae" />
